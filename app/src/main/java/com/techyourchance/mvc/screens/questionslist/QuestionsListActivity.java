@@ -1,14 +1,7 @@
 package com.techyourchance.mvc.screens.questionslist;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.techyourchance.mvc.R;
@@ -28,17 +21,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class QuestionsListActivity extends BaseActivity implements QuestionsListViewMvc.Listener {
+public class QuestionsListActivity extends BaseActivity implements QuestionsListViewMvcImpl.Listener {
 
     private StackoverflowApi mStackoverflowApi;
 
-    private QuestionsListViewMvc mViewMvc;
+    private QuestionsListViewMvcImpl mViewMvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mViewMvc = new QuestionsListViewMvc(LayoutInflater.from(this), null);
+        mViewMvc = new QuestionsListViewMvcImpl(LayoutInflater.from(this), null);
         mViewMvc.registerListerner(this);
 
         mStackoverflowApi = new Retrofit.Builder()
@@ -90,10 +83,5 @@ public class QuestionsListActivity extends BaseActivity implements QuestionsList
     @Override
     public void onQuestionClicked(Question question) {
         Toast.makeText(this, question.getTitle(), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 }
