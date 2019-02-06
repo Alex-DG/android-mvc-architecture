@@ -34,7 +34,7 @@ public class QuestionsListViewMvcImpl implements QuestionsRecyclerAdapter.Listen
     }
 
     @Override
-    public void registerListerner(Listener listener) {
+    public void registerListener(Listener listener) {
         mListeners.add(listener);
     }
 

@@ -11,7 +11,7 @@ import com.techyourchance.mvc.questions.Question;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionsListItemViewMvcImpl implements  QuestionsListItemViewMvc {
+public class QuestionsListItemViewMvcImpl implements QuestionsListItemViewMvc {
 
     private final View mRootView;
     private final List<Listener> mListeners = new ArrayList<>(1);
@@ -46,7 +46,6 @@ public class QuestionsListItemViewMvcImpl implements  QuestionsListItemViewMvc {
     @Override
     public void registerListener(Listener listener) {
         mListeners.add(listener);
-
     }
 
     @Override
