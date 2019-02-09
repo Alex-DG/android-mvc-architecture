@@ -3,11 +3,16 @@ package com.techyourchance.mvc.screens.common;
 import android.support.v7.app.AppCompatActivity;
 
 import com.techyourchance.mvc.CustomApplication;
-import com.techyourchance.mvc.common.dependincyInjection.CompositionRoot;
+import com.techyourchance.mvc.common.dependincyInjection.ControllerCompositionRoot;
 
 public class BaseActivity extends AppCompatActivity {
 
-    protected CompositionRoot getCompositionRoot() {
-        return ((CustomApplication) getApplication()).getCompositionRoot();
+    private ControllerCompositionRoot mControllerCompositionRoot;
+
+    protected ControllerCompositionRoot getCompositionRoot() {
+        if(mControllerCompositionRoot == null) {
+            mControllerCompositionRoot = new ControllerCompositionRoot(((CustomApplication) getApplication()).getCompositionRoot(), this);
+        }
+        return mControllerCompositionRoot;
     }
 }
