@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 import com.techyourchance.mvc.R;
 import com.techyourchance.mvc.questions.Question;
 import com.techyourchance.mvc.screens.common.BaseObservableViewMvc;
-import com.techyourchance.mvc.screens.common.BaseViewMvc;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionsListViewMvcImpl extends BaseObservableViewMvc<QuestionsListViewMvc.Listener> implements QuestionsRecyclerAdapter.Listener, QuestionsListViewMvc {

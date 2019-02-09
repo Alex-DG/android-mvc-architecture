@@ -8,7 +8,7 @@ public class BaseViewMvc implements ViewMvc {
 
     @Override
     public View getRootView() {
-        return null;
+        return mRootView;
     }
 
     protected  void setRootView(View rootView) {
