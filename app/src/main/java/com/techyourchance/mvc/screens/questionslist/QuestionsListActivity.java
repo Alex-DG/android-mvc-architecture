@@ -25,13 +25,13 @@ public class QuestionsListActivity extends BaseActivity implements QuestionsList
 
     private StackoverflowApi mStackoverflowApi;
 
-    private QuestionsListViewMvcImpl mViewMvc;
+    private QuestionsListViewMvc mViewMvc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mViewMvc = new QuestionsListViewMvcImpl(LayoutInflater.from(this), null);
+        mViewMvc = getCompositionRoot().getViewMvcFactory().getQuestionsListViewMvc(null);
         mViewMvc.registerListener(this);
 
         mStackoverflowApi = getCompositionRoot().getStackoverflowApi();

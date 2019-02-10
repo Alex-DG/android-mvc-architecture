@@ -2,9 +2,10 @@ package com.techyourchance.mvc;
 
 import android.app.Application;
 
-import com.techyourchance.mvc.common.dependincyInjection.CompositionRoot;
+import com.techyourchance.mvc.common.dependencyinjection.CompositionRoot;
 
 public class CustomApplication extends Application {
+
     private CompositionRoot mCompositionRoot;
 
     @Override

@@ -3,7 +3,8 @@ package com.techyourchance.mvc.screens.common;
 import android.content.Context;
 import android.view.View;
 
-public class BaseViewMvc implements ViewMvc {
+public abstract class BaseViewMvc implements ViewMvc {
+    
     private View mRootView;
 
     @Override
@@ -11,16 +12,15 @@ public class BaseViewMvc implements ViewMvc {
         return mRootView;
     }
 
-    protected  void setRootView(View rootView) {
+    protected void setRootView(View rootView) {
         mRootView = rootView;
     }
 
-    protected  <T extends View> T findViewById(int id) {
+    protected <T extends View> T findViewById(int id) {
         return getRootView().findViewById(id);
     }
 
     protected Context getContext() {
         return getRootView().getContext();
     }
-
 }

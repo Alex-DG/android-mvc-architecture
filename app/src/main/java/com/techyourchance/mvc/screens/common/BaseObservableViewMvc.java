@@ -4,7 +4,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BaseObservableViewMvc <ListenerType> extends BaseViewMvc implements ObservableViewMvc<ListenerType> {
+public abstract class BaseObservableViewMvc<ListenerType> extends BaseViewMvc
+        implements ObservableViewMvc<ListenerType> {
 
     private Set<ListenerType> mListeners = new HashSet<>();
 
@@ -18,7 +19,7 @@ public class BaseObservableViewMvc <ListenerType> extends BaseViewMvc implements
         mListeners.remove(listener);
     }
 
-    protected  Set<ListenerType> getListeners() {
+    protected Set<ListenerType> getListeners() {
         return Collections.unmodifiableSet(mListeners);
     }
 }
