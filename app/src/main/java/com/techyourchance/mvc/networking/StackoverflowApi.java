@@ -12,4 +12,7 @@ public interface StackoverflowApi {
     @GET("/questions?key=" + Constants.STACKOVERFLOW_API_KEY + "&sort=activity&order=desc&site=stackoverflow&filter=withbody")
     Call<QuestionsListResponseSchema> fetchLastActiveQuestions(@Query("pagesize") Integer pageSize);
 
+    @GET("/questions/{questionId}?site=stackoverflow&filter=withbody")
+    Call<QuestionsListResponseSchema> fetchQuestionDetails(@Path("questionId") String quetionId);
+
 }
